@@ -63,7 +63,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      bannerMovie: popularData.results[5],
+      bannerMovie: popularData.results[randomMovie],
       popularMovies: popularData.results,
       trending: trendingData.results,
       session,

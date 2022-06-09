@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import truncateString from "../helpers/truncateString";
+import { useRouter } from "next/router";
 const Banner = ({ movie }) => {
+  const router = useRouter();
   return (
     <header className="h-[80vh] overflow-hidden relative">
       <div className="relative h-full w-full">
@@ -23,10 +25,20 @@ const Banner = ({ movie }) => {
           {truncateString(movie.overview, 400)}
         </p>
         <div className="flex items-center gap-5 mt-10 text-sm md:text-lg">
-          <button className="bg-indigo-600 hover:bg-indigo-100 hover:text-black py-2 px-6 md:px-12 rounded-md transition duration-300">
+          <button
+            onClick={() =>
+              router.push(`/movies/${movie.id}`, undefined, { scroll: false })
+            }
+            className="bg-indigo-600 hover:bg-indigo-100 hover:text-black py-2 px-6 md:px-12 rounded-md transition duration-300"
+          >
             Play
           </button>
-          <button className="border hover:bg-indigo-100 hover:text-black py-2 px-6 md:px-12 rounded-md transition duration-300">
+          <button
+            onClick={() =>
+              router.push(`/movies/${movie.id}`, undefined, { scroll: false })
+            }
+            className="border hover:bg-indigo-100 hover:text-black py-2 px-6 md:px-12 rounded-md transition duration-300"
+          >
             View Details
           </button>
         </div>
