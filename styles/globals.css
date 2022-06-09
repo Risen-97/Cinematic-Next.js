@@ -1,16 +1,62 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-800 text-white  overflow-x-hidden;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.navBtn {
+  @apply hidden md:inline-block  text-white py-1 px-6 rounded-md hover:bg-white hover:text-slate-800 font-medium transition duration-300;
 }
 
-* {
-  box-sizing: border-box;
+.navMenu {
+  @apply hover:bg-white hover:text-black py-4 text-center font-medium transition duration-300 w-full md:w-fit md:hover:bg-transparent md:py-0 md:hover:text-slate-300;
+}
+
+.arrowShadow {
+  @apply hidden md:inline-block h-[200px]  md:h-[300px] xl:h-[300px]  from-black  absolute z-10  bottom-[6px];
+}
+
+.paginationBtns {
+  @apply w-4/5 h-10 mx-auto   list-none flex items-center justify-center;
+}
+
+.paginationBtns a {
+  @apply py-[10px] px-[13px] flex items-center rounded-sm justify-center my-2 mx-1 text-[14px] font-medium  bg-transparent hover:bg-gray-400 border border-gray-400 transition duration-300;
+}
+
+.previousBtnHide,
+.nextBtnHide {
+  @apply hidden;
+}
+
+.paginationActive a {
+  @apply bg-gray-400;
+}
+.slick-list {
+  margin: 0 -200px !important;
+}
+
+.slick-next {
+  right: -50px !important;
+}
+
+.slick-prev {
+  left: -50px !important;
+}
+
+.slick-next,
+.slick-prev {
+  z-index: 20;
+}
+
+.slick-prev:before {
+  font-size: 40px !important;
+}
+
+.slick-next:before {
+  font-size: 40px !important;
 }
