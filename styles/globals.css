@@ -60,3 +60,7 @@
 .slick-next:before {
   font-size: 40px !important;
 }
+
+.spinner {
+  display: none !important;
+}
