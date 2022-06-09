@@ -21,4 +21,6 @@ export default NextAuth({
     signIn: "/auth/signin",
     signOut: "/auth/signup",
   },
+
+  secret: process.env.SECRET,
 });
