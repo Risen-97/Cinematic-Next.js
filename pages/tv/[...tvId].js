@@ -2,7 +2,7 @@ import Details from "../../components/Details";
 import Head from "next/head";
 import { getSession } from "next-auth/react";
 
-const TvshowDetails = ({ tvShow, casts }) => {
+const TvshowDetails = ({ tvShow, casts, prevPage }) => {
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ const TvshowDetails = ({ tvShow, casts }) => {
       </Head>
 
       <section className="">
-        <Details data={tvShow} casts={casts} type="tv" />
+        <Details data={tvShow} casts={casts} type="tv" prevPage={prevPage} />
       </section>
     </>
   );
@@ -52,6 +52,8 @@ export async function getServerSideProps(context) {
     props: {
       tvShow: tvData,
       casts: castData.cast,
+      prevPage: context.req.headers.referer ? true : false,
+
       session,
     },
   };
