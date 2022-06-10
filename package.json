@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next-auth/firebase-adapter": "^0.1.2-pr.183-76202b42.8",
     "firebase": "^9.8.2",
     "framer-motion": "^6.3.5",
     "next": "12.1.6",
